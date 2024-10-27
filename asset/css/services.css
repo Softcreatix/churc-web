@@ -1,0 +1,62 @@
+
+/*---------------------------------------/
+#Services and schedules
+/---------------------------------------*/
+.services {
+    margin-top: 100px;
+    padding: 0px 100px 30px 100px;
+    width: 100%;
+
+}
+
+.services .title {
+    margin-bottom: 30px;
+}
+
+.services-content {
+    display: flex;
+    flex-wrap: wrap;
+ 
+    gap: 20px;
+    -webkit-column-gap: 20px;
+
+}
+
+.services-item {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+    width: 367px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-item i {
+    font-size: 2rem;
+    color: #553209;
+    margin-right: 15px;
+}
+
+.services-item h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.services-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+@media screen and (max-width: 540px){
+    .services {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .services-item{
+        width: 100%;
+    }
+
+}

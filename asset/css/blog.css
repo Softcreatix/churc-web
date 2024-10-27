@@ -1,0 +1,97 @@
+
+/*---------------------------------------/
+#Blog
+/---------------------------------------*/
+.blog {
+    margin-top: 100px;
+    padding: 0px 100px 30px 100px;
+}
+
+.blog .title {
+    margin-bottom: 30px;
+}
+
+.blog-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    -webkit-column-gap: 20px;
+}
+
+.blog-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    text-align: left;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.blog-date{
+    font-style: italic;
+}
+.blog-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.blog-details {
+    padding: 20px;
+}
+
+.blog-details h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.blog-details p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.blog-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    -webkit-column-gap: 10px;
+}
+
+.blog-links .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.blog-links .btn-read {
+    background-color: #754815;
+}
+
+.blog-links .btn-read:hover {
+    opacity: 0.8;
+}
+/*If no articles on the site the blog section takes the height of 80vh*/
+.blog.empty {
+    height: 80vh;
+}
+
+@media screen and (max-width: 540px){
+    .blog {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .blog-card{
+        width: 100%;
+    }
+
+}

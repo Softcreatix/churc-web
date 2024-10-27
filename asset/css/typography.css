@@ -1,0 +1,244 @@
+/*---------------------------------------/
+#Reset
+/---------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+/*---------------------------------------/
+#Titles
+/---------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/*---------------------------------------/
+#Body
+/---------------------------------------*/
+
+body {
+
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    background-color: #fafafa;
+
+}
+
+
+/*---------------------------------------/
+#Header
+/---------------------------------------*/
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    background-image:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../images/white_wallparer.jpeg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    padding: 8px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    box-shadow: 0px 2px 4px #00000017;
+
+}
+
+
+header .header-content {
+    display: flex;
+    gap: 5px;
+    padding-left: 80px;
+    padding-right: 100px;
+    align-items: center;
+    -webkit-column-gap: 5px;
+    justify-content: space-between;
+}
+
+.header-content .logo p img {
+    height: 60px;
+}
+
+.header-content .list {
+    display: flex;
+    align-items: center;
+}
+
+.header-content .list-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    -webkit-column-gap: 20px;
+}
+
+.header-content .list {
+    display: flex;
+    align-items: center;
+}
+
+.header-content .list-details a {
+    color: black;
+    font-size: 15px;
+    transition-delay: 0.4s;
+    transition: 0.4s ease-in-out;
+}
+
+.header-content .list-details a:hover {
+    color: #b47328;
+}
+
+.header-content .list .home {
+    transition-delay: 0.4s;
+    transition: 0.4s ease-in-out;
+}
+.donate{
+    color: #fff;
+    width: fit-content;
+    padding: 7px 18px;
+    border-radius: 25px;
+    transition-delay: 0.4s;
+    transition: 0.4s ease-in-out;
+    background-color: #754815;
+}
+
+.title div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    -webkit-column-gap: 8px;
+}
+
+.title div h4 {
+    font-size: 14px;
+    color: #cecece94;
+    font-style: italic;
+}
+
+.title div p {
+    padding: 1px;
+    width: 5%;
+    background-color: #cecece94;
+}
+
+.title h2 {
+    font-size: 25px;
+    color: #553209;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/*Menu*/
+
+.our-menu {
+    display: flex;
+    flex-direction: row;
+}
+.our-menu i {
+    color:  #A77D3D;
+    font-size: 25px;
+
+}
+
+.menu-icon {
+    display: none;
+}
+
+.exit-icon {
+    display: none;
+}
+
+
+/* Media query */
+@media screen and (max-width: 1047px){
+    header .header-content{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+@media screen and (max-width: 960px){
+    header .header-content {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .menu-icon {
+        display: flex;
+    }
+    .header-content .list-details {
+        position: fixed;
+        top: 82px;
+        left: -100%; 
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0px;
+        -webkit-column-gap: 0px;
+        padding-left: 30px;
+        height: 60vh;
+        background-color: #fff;
+        box-shadow: 0px 1px 10px #c2c2c25d;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .header-content .list-details.active {
+        left: 0;
+    }
+    .header-content .list a {
+        color: #141b1fda;
+        padding-top: 20px;
+    }
+    .header-content .list .donate{
+        margin-top: 20px;
+        padding: 7px 18px;
+    }
+    .exit-icon {
+        display: none;
+    }
+
+    .our-menu.active .menu-icon {
+        display: none;
+    }
+
+    .our-menu.active .exit-icon {
+        display: flex;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .ministries-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        -webkit-column-gap: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 540px){
+    .blog {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .sermon-card, .resource-card{
+        width: 100%;
+    }
+    
+    .header-content .logo p img {
+        height: 60px;
+    }
+   
+}

@@ -1,0 +1,60 @@
+
+
+/*---------------------------------------/
+#About us
+/---------------------------------------*/
+
+.about {
+    margin-top: 100px;
+    padding: 0px 100px 30px 100px;
+}
+
+.title div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    -webkit-column-gap: 8px;
+}
+
+.title div h4 {
+    font-size: 14px;
+    color: #cecece94;
+    font-style: italic;
+}
+
+.title div p {
+    padding: 1px;
+    width: 5%;
+    background-color: #cecece94;
+}
+
+.title h2 {
+    font-size: 25px;
+    color: #553209;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.about .about-content {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    -webkit-column-gap: 10px;
+}
+
+.about .about-image img {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.about .about-content .about-text i {
+    color: #553209;
+}
+
+@media screen and (max-width: 540px){
+    .about {
+        padding: 30px 30px 40px 30px;
+       
+    }
+   
+}

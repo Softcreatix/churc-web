@@ -45,7 +45,7 @@ body {
 header {
     width: 100%;
     position: fixed;
-    z-index: 1000;
+    z-index: 100;
     top: 0;
     padding: 8px;
     transition: background-color 0.3s ease, padding 0.3s ease;
@@ -212,8 +212,6 @@ header.scrolled .list-details a {
     position: absolute;
     z-index: 1;
 }
-
-
 
 
 

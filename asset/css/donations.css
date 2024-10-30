@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    background-color: #fafafa;
+}
+.donation-section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.donation-section .donations{
+
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 55%;
+    padding: 20px;
+}
+.donation-section .donations .donate_image{
+    display: flex;
+    justify-content: center;
+}
+.donation-section .donations p img{
+    width: 300px;
+    object-fit: cover;
+}
+.donation-section .donations h2{
+    text-align: center;
+    color:  #A77D3D;
+}
+.donation-section .donations .numero{
+    margin-top: 10px;
+}
+.donations .numero span{
+    font-weight: 600;
+    color:  #A77D3D;
+}
+
+@media screen and (max-width:1080px) {
+    .donation-section .donations{
+        width: 80%;
+    }
+}
+@media screen and (max-width:742px) {
+    .donation-section .donations{
+        width: 90%;
+    }
+}
+@media screen and (max-width:654px) {
+    .donation-section .donations{
+        width: 98%;
+        margin: 12px;
+    }
+    .donation-section{
+        height: auto;
+    }
+}
+
+@media screen and (max-width:410px) {
+    .donation-section .donations p img{
+        width: 200px;
+    }
+}

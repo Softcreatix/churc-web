@@ -38,7 +38,7 @@
                     <a href="pages/blog.php">Blog</a>
                     <a href="pages/gallery.php">Gallérie</a>
                     <a href="pages/contact.html">Contacts</a>
-                    <a class="donate" style="color: white;" href="#donate">Faire un don ❤</a>
+                    <a class="donate" style="color: white;" href="pages/donations.html">Faire un don ❤</a>
                 </div>
                 <div class="our-menu">
                     <i class="bi bi-list-nested menu-icon"></i>
@@ -65,7 +65,7 @@
             <!-- Slogan Section -->
             <h3 class="slogan">Mission : Sauvés pour illuminer les Nations.</h3>
             
-            <a href="login.html">s'inscrire</a>
+
         </div>
 
         <div class="home-images">
@@ -258,6 +258,7 @@ $sermons = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="writer">
             &copy; 2024 Holy Spirit Academia church. All rights reserved. <br> Developed by SoftCreatix 
         </div>
+        <a href="pages/login.php">login</a>
     </footer>
     <script src="asset/javascript/typeWritter.js"></script>
     <script src="asset/javascript/app.js"></script>

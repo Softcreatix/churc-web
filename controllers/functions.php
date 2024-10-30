@@ -74,4 +74,20 @@ function popup_delete_video(){
         </div>
     <?php
 }
+
+function notconnected(){
+    if (! isset($_SESSION['admin'])) {
+        // Redirect to the login page if not logged in
+        header("Location: ../");
+        exit();
+    }
+}
+
+function logout(){
+    if(isset($_POST['logout'])){
+        unset($_SESSION['admin']);
+        header('location:../');
+        exit();
+    }
+}
 ?>

@@ -43,7 +43,8 @@
                     <a href="event.html">Evénements</a>
                     <a href="blog.php">Blog</a>
                     <a href="contact.html">Contacts</a>
-                    <a class="donate" style="color: white;" href="#donate">Faire un don ❤</a>
+                         <a class="donate" style="color: white;" href="donations.html">Faire un don ❤</a>
+               
                 </div>
                 <div class="our-menu">
                     <i class="bi bi-list-nested menu-icon"></i>

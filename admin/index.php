@@ -1,6 +1,9 @@
-<?php 
-    require_once('../database/db.php');
+<?php
+    session_start();
+    require('../database/db.php');
     require_once('../controllers/functions.php');
+    notconnected();
+    logout()
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -62,7 +65,7 @@
                     <span>E-books</span>
                 </a>
                  <form class="button" action="" method="post">
-                    <button style="font-size: 1rem;">
+                    <button  name="logout" style="font-size: 1rem;">
                             <i class="bi bi-box-arrow-left"></i>
                             <span>Se Deconnecter</span>
                     </button>
@@ -70,7 +73,7 @@
             </nav>
         </div>
         <div class="second-bloc">
-            <p >Voici la section où vous pouvez gérer l'ensemble de vos photos et vidéos. Vous avez la possibilité d'ajouter de nouveaux contenus, mais aussi de supprimer ceux existants, selon vos besoins. Cette interface vous offre un contrôle complet sur la gestion de vos fichiers multimédias.</p>
+            <p style="margin-left: 20px;margin-right:20px;">Voici la section où vous pouvez gérer l'ensemble de vos photos et vidéos. Vous avez la possibilité d'ajouter de nouveaux contenus, mais aussi de supprimer ceux existants, selon vos besoins. Cette interface vous offre un contrôle complet sur la gestion de vos fichiers multimédias.</p>
             <div class="image-details">
                 <div class="bouttons" >
                     <div class="add-image">

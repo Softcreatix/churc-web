@@ -1,7 +1,11 @@
 <?php
     require_once('../controllers/edit_article.php');
+    session_start();
+    require('../database/db.php');
+    require_once('../controllers/functions.php');
+    notconnected();
+    logout()
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -69,7 +73,7 @@
                     <span>E-books</span>
                 </a>
                  <form class="button" action="" method="post">
-                    <button style="font-size: 1rem;">
+                    <button  name="logout" style="font-size: 1rem;">
                             <i class="bi bi-box-arrow-left"></i>
                             <span>Se Deconnecter</span>
                     </button>

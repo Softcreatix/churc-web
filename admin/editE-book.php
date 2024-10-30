@@ -1,4 +1,10 @@
-
+<?php
+    session_start();
+    require('../database/db.php');
+    require_once('../controllers/functions.php');
+    notconnected();
+    logout()
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -65,7 +71,7 @@
                     <span>E-books</span>
                 </a>
                  <form class="button" action="" method="post">
-                    <button style="font-size: 1rem;">
+                    <button  name="logout" style="font-size: 1rem;">
                             <i class="bi bi-box-arrow-left"></i>
                             <span>Se Deconnecter</span>
                     </button>
@@ -80,7 +86,7 @@
                         <input type="text" name="ebook_title" value="E-Book: Cheminer avec Dieu" required>
                     </div>
                     <div class="all-inputs">
-                        <textarea name="ebook_description" required>Un e-book gratuit qui vous guide dans votre marche spirituelle avec Dieu.</textarea>
+                        <textarea id="mytextarea" name="ebook_description" required>Un e-book gratuit qui vous guide dans votre marche spirituelle avec Dieu.</textarea>
                     </div>
                     <p style="text-align: left;">Modifier la photo de l'E-book</p>
                     <div class="all-inputs">

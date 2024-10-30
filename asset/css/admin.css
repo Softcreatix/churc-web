@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: #3d2305;
+    z-index: 100;
 }
 
 .header-admin h2 {
@@ -73,10 +74,7 @@
     justify-content: center;
     margin-top: 20px;
 }
-.second-bloc{
-    padding-left: 20px;
-    padding-right: 5px;
-}
+
 /* ------------------------- /
 #
 / ------------------------- */
@@ -197,6 +195,61 @@
     outline: none;
     background-color: #3d2305;
     font-family: "Poppins", sans-serif;
+}
+
+.login-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgb(178, 183, 188), rgba(245, 245, 245, 0.8), rgb(178, 183, 188));
+    background-size: 300% 300%;
+    animation: gradientWave 8s linear infinite;
+}
+.login{
+    background-color: white;
+    padding: 30px;
+    margin: 10px;
+}
+.login .all-inputs{
+    margin-bottom: 10px
+}
+.login input{
+
+}
+.login h2{
+    text-align: center;
+}
+
+.login .submit input{
+    font-size: 1rem;
+}
+
+
+@keyframes gradientWave {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+.passwo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pass {
+    display: flex;
+    gap: 10px;
+    -webkit-column-gap: 10px;
+}
+.eyes {
+    cursor: pointer;
+}
+.hidden {
+    display: none;
 }
 
 /* ------------------------- /
@@ -357,6 +410,7 @@ button{
     transition: 3s ease;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.678);
+    z-index: 3000;
     
 }
 
@@ -411,7 +465,7 @@ button{
         position: fixed;
         top: 60px;
         left: -100%;
-        z-index: 1000;
+        z-index: 150;
         width: 250px;
         transition: left 0.3s ease;
         box-shadow: 0px 1px 10px #2c2c2c;
@@ -456,7 +510,7 @@ button{
         width: 100%;
     }
     .image-items img {
-        width: 350px;
+        width: 480px;
     }
     .prod-item{
         width: 100%;
@@ -468,7 +522,24 @@ button{
     }
     
 }
-
+@media screen and (max-width: 496px) {
+    .image-items img {
+        width: 440px;
+    }
+    
+}
+@media screen and (max-width: 460px) {
+    .image-items img {
+        width: 400px;
+    }
+    
+}
+@media screen and (max-width: 416px) {
+    .image-items img {
+        width: 350px;
+    }
+    
+}
 @media screen and (max-width: 409px) {
     .bouttons{
         display: grid;
@@ -477,25 +548,22 @@ button{
     
 }
 
-@media screen and (max-width: 398px) {
-
+@media screen and (max-width: 366px) {
     .image-items img {
         width: 300px;
     }
     
 }
-
 @media screen and (max-width: 341px) {
+
+    .login{
+        padding: 15px;
+    }
+}
+@media screen and (max-width: 317px) {
 
     .image-items img {
         width: 270px;
-    }
-    
-}
-@media screen and (max-width: 311px) {
-
-    .image-items img {
-        width: 250px;
     }
     
 }

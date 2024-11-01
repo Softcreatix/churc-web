@@ -9,6 +9,9 @@
 
 }
 
+h3{
+    text-align: center;
+}
 .events .title {
     margin-bottom: 30px;
 }
@@ -16,6 +19,7 @@
 .events-content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     -webkit-column-gap: 20px;
 

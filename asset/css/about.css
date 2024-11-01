@@ -9,6 +9,14 @@
     padding: 0px 100px 30px 100px;
 }
 
+.about-short {
+    height: 80vh;
+}
+
+.about-long {
+    height: auto; /* Let the height be determined by content */
+}
+
 .title div {
     display: flex;
     align-items: center;

@@ -38,11 +38,12 @@
             <div class="list">
                 <div class="list-details">
                     <a class="home" href="../index.php">Accueil</a>
-                    <a href="about.html">À propos</a>
-                    <a href="services.html">Services & Horaires</a>
-                    <a href="event.html">Evénements</a>
+                    <a href="about.php               
+">À propos</a>
+                    <a href="services.php">Services & Horaires</a>
+                    <a href="event.php">Evénements</a>
                     <a href="blog.php">Blog</a>
-                    <a href="contact.html">Contacts</a>
+                    <a href="contact.php">Contacts</a>
                          <a class="donate" style="color: white;" href="donations.html">Faire un don ❤</a>
                
                 </div>
@@ -133,7 +134,7 @@
     <script src="../asset/javascript/app.js"></script>
     <footer>
         <div class="writer">
-            &copy; 2024 Holy Spirit Academia church. All rights reserved. <br> Developed by SoftCreatix 
+            &copy;  <?= date("Y") ?> Holy Spirit Academia church. All rights reserved. <br> Developed by SoftCreatix 
         </div>
     </footer>
 </body>

@@ -1,12 +1,13 @@
-
 <?php
     require_once('../database/db.php');
-    if (isset($_GET['article_id']) && !empty($_GET['article_id'])) {
-        $article_id = $_GET['article_id'];
-        $stmt = $db->prepare('SELECT * FROM articles WHERE article_id = ?');
-        $stmt->execute(array($article_id));
-        $article = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (!$article) {
+    if (isset($_GET['article']) && !empty($_GET['article'])) {
+        $slug = $_GET['article'];
+
+        $stmt = $db->prepare("SELECT * FROM articles WHERE article = ?");
+        $stmt->execute([$slug]);
+        $article = $stmt->fetch();
+
+        if (!$slug) {
             echo '<script>alert("Article non trouvée");</script>';
             echo '<script>window.location.href="index.php";</script>';
             exit;
@@ -16,6 +17,8 @@
         echo '<script>window.location.href="index.php";</script>';
         exit;
     }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,7 +26,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $article['title']?></title>
+    <title><?= htmlspecialchars($article['title']) ?></title>
 
     <!--css-->
     <link rel="stylesheet" href="../asset/css/typography.css">
@@ -37,15 +40,14 @@
     <!--Icons-->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.0/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="../asset/images/church_logo.png" type="image/png" sizes="16x16">
 </head>
 
 <body>
 
     <!--Header part-->
-    <header >
+    <header>
         <div class="header-content">
             <div class="logo">
                 <p><img src="../asset/images/church_logo.png" alt=""></p>
@@ -53,14 +55,14 @@
             <div class="list">
                 <div class="list-details">
                     <a class="home" href="../index.php">Accueil</a>
-                    <a href="about.html">À propos</a>
-                    <a href="services.html">Services & Horaires</a>
-                    <a href="event.html">Evénements</a>
+                    <a href="about.php               
+">À propos</a>
+                    <a href="services.php">Services & Horaires</a>
+                    <a href="event.php">Evénements</a>
                     <a href="blog.php">Blog</a>
                     <a href="gallery.php">Gallérie</a>
-                    <a href="contact.html">Contacts</a>
-                         <a class="donate" style="color: white;" href="donations.html">Faire un don ❤</a>
-               
+                    <a href="contact.php">Contacts</a>
+                    <a class="donate" style="color: white;" href="donations.html">Faire un don ❤</a>
                 </div>
                 <div class="our-menu">
                     <i class="bi bi-list-nested menu-icon"></i>
@@ -70,27 +72,23 @@
         </div>
     </header>
 
-
-
     <!-- About Us Section -->
     <section id="about" class="about">
-        <div class="title">
-            
-            <h2><?=$article['title']?></h2>
-        </div>
+        <div>
+            <h2><?= $article['title'] ?></h2>
+        </div><br>
         <div class="about-content">
             <div class="about-text">
                 <p>
-                <?=nl2br($article['description'])?>
+                    <?= nl2br(($article['description'])) ?>
                 </p>
             </div>
         </div>
     </section>
+
     <script src="../asset/javascript/app.js"></script>
-    <footer>
-        <div class="writer">
-            &copy; 2024 Holy Spirit Academia church. All rights reserved. <br> Developed by SoftCreatix 
-        </div>
-    </footer>
+
 </body>
 </html>
+
+

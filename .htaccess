@@ -1,7 +1,0 @@
-Options +FollowSymLinks
-RewriteEngine On
-
-# Rewrite rules for video, audio, and text pages based on slug
-RewriteRule ^sermon/video/([a-zA-Z0-9-]+)/?$ pages/sermons_videos.php?slug=$1 [L]
-RewriteRule ^sermon/audio/([a-zA-Z0-9-]+)/?$ pages/sermons_audios.php?slug=$1 [L]
-RewriteRule ^sermon/text/([a-zA-Z0-9-]+)/?$ pages/text_sermon.php?slug=$1 [L]

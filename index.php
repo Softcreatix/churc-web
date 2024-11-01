@@ -32,12 +32,13 @@
             <div class="list">
                 <div class="list-details">
                     <a class="home" href="#">Accueil</a>
-                    <a href="pages/about.html">À propos</a>
-                    <a href="pages/services.html">Services & Horaires</a>
-                    <a href="pages/event.html">Evénements</a>
+                    <a href="pages/about.php               
+">À propos</a>
+                    <a href="pages/services.php">Services & Horaires</a>
+                    <a href="pages/event.php">Evénements</a>
                     <a href="pages/blog.php">Blog</a>
                     <a href="pages/gallery.php">Gallérie</a>
-                    <a href="pages/contact.html">Contacts</a>
+                    <a href="pages/contact.php">Contacts</a>
                     <a class="donate" style="color: white;" href="pages/donations.html">Faire un don ❤</a>
                 </div>
                 <div class="our-menu">
@@ -161,7 +162,7 @@ $sermons = $stmt->fetchAll(PDO::FETCH_ASSOC);
 require_once('database/db.php');
 
 // Récupération des sermons depuis la base de données
-$stmt = $db->prepare("SELECT SUBSTRING(description, 1, 150) as short_desc, title, sermon_id,audio,video FROM sermons");
+$stmt = $db->prepare("SELECT SUBSTRING(description, 1, 150) as short_desc, title, sermon_id,audio,video FROM sermons ORDER BY sermon_id DESC");
 $stmt->execute();
 $sermons = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -209,7 +210,7 @@ $sermons = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- Resources Section -->
      <?php
         try {
-            $stmt = $db->prepare("SELECT * FROM ebooks");
+            $stmt = $db->prepare("SELECT * FROM ebooks ORDER BY id DESC");
             $stmt->execute();
             $ebooks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
@@ -256,7 +257,7 @@ $sermons = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     <footer>
         <div class="writer">
-            &copy; 2024 Holy Spirit Academia church. All rights reserved. <br> Developed by SoftCreatix 
+            &copy;  <?= date("Y") ?> Holy Spirit Academia church. All rights reserved. <br> Developed by SoftCreatix 
         </div>
         <a href="pages/login.php">login</a>
     </footer>

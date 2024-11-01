@@ -4,7 +4,7 @@
 /---------------------------------------*/
 .services {
     margin-top: 100px;
-    padding: 0px 100px 30px 100px;
+    padding: 30px 100px 50px 100px;
     width: 100%;
 
 }
@@ -16,11 +16,12 @@
 .services-content {
     display: flex;
     flex-wrap: wrap;
- 
+    justify-content: center;
     gap: 20px;
     -webkit-column-gap: 20px;
 
 }
+
 
 .services-item {
     background-color: #f4f4f4;

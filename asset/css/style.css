@@ -235,6 +235,7 @@ header.scrolled .list-details a {
     gap: 15px;
     -webkit-column-gap: 15px;
     grid-template-columns: auto auto;
+    
 }
 
 .ministries-item {

@@ -2,6 +2,9 @@
 $success = null;
 $error = null;
 require_once('../database/db.php');
+function generateSlug($title) {
+    return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title)));
+}
 
 if (isset($_POST['add'])) {
     $title = htmlspecialchars($_POST['title']);
@@ -12,6 +15,7 @@ if (isset($_POST['add'])) {
     $folder = "../pages/article_images/" . $filename;
     $allowedExtensions = ['png', 'jpg', 'jpeg'];
     $pattern = '/\.(' . implode('|', $allowedExtensions) . ')$/i';
+    $slug = generateSlug($title);
 
     if (empty($title) || empty($description)) {
         $error = "Veuillez remplir tous les champs";
@@ -30,11 +34,11 @@ if (isset($_POST['add'])) {
         if ($existing_article) {
             $error = "Un article avec ce titre existe déjà";
         } else {
-            $query = $db->prepare('INSERT INTO articles (title, description, article_image) VALUES (:title, :description, :article_image)');
+            $query = $db->prepare('INSERT INTO articles (title, description, article_image, article) VALUES (:title, :description, :article_image, :article)');
             $query->bindParam(':title', $title);
             $query->bindParam(':description', $description);
             $query->bindParam(':article_image', $filename);
-
+            $query->bindParam(':article', $slug);
             if ($query->execute()) {
                 // Déplacer le fichier téléchargé dans le dossier cible
                 if (move_uploaded_file($tempname, $folder)) {

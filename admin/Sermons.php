@@ -89,7 +89,7 @@
                 echo '<div class="blog-details">';
                 foreach ($sermons as $sermon) {
                     ?>
-                    <div class="blog-item">
+                    <div style="margin-left: 20px;" class="blog-item">
                         <h3><?= $sermon['title'] ?></h3>
                         <p><?= nl2br($sermon['short_desc']) ?>...</p>
                         <div>

@@ -2,7 +2,7 @@
      require_once('../database/db.php');
      
      // Fetch articles from the database
-     $stmt = $db->prepare('SELECT SUBSTRING(description, 1, 150) as short_desc, title, article_id, published_date, article_image FROM articles');
+     $stmt = $db->prepare('SELECT SUBSTRING(description, 1, 160) as short_desc, title, article_id, published_date, article_image,article FROM articles ORDER BY published_date DESC');
      $stmt->execute();
      $articles = $stmt->fetchAll();
 
@@ -36,11 +36,11 @@
             <div class="list">
                 <div class="list-details">
                     <a class="home" href="../index.php">Accueil</a>
-                    <a href="about.html">À propos</a>
-                    <a href="services.html">Services & Horaires</a>
-                    <a href="event.html">Evénements</a>
+                    <a href="about.php">À propos</a>
+                    <a href="services.php">Services & Horaires</a>
+                    <a href="event.php">Evénements</a>
                     <a href="gallery.php">Gallérie</a>
-                    <a href="contact.html">Contacts</a>
+                    <a href="contact.php">Contacts</a>
                          <a class="donate" style="color: white;" href="donations.html">Faire un don ❤</a>
                
                 </div>
@@ -63,6 +63,7 @@
         </div>
         <p>Découvrez nos articles sur des sujets spirituels, les dernières nouvelles de la communauté.</p>
         <br>
+        <div  class="blog-content">
         <?php
             if (empty($articles)) {
                 echo '<p>Aucun article publié sur le site !!</p>';
@@ -74,11 +75,11 @@
                     <div class="blog-card">
                         <img src="../pages/article_images/<?php echo htmlspecialchars($article['article_image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" class="blog-image">
                         <div class="blog-details">
-                            <h4><?php echo htmlspecialchars($article['title']); ?></h4>
+                            <h4><?=$article['title']?></h4>
                             <p class="blog-date">Publié le : <?= $formattedDate ?></p>
                             <p><?= nl2br($article['short_desc']) ?>...</p>
                             <div class="blog-links">
-                                <a href="article_description.php?article_id=<?php echo $article['article_id']; ?>" class="btn btn-read">Lire plus</a>
+                                <a  class="btn btn-read" href="article_description.php?article=<?php echo $article['article']; ?>" >Lire plus</a>
                             </div>
                         </div>
                     </div>
@@ -86,11 +87,13 @@
                 }
             }
         ?>
+        </div>
+      
     </section>
 
     <footer>
         <div class="writer">
-            &copy; 2024 Holy Spirit Academia church. All rights reserved. <br> Developed by SoftCreatix 
+            &copy; <?= date("Y") ?> Holy Spirit Academia church. All rights reserved. <br> Developed by SoftCreatix 
         </div>
     </footer>
     <script src="../asset/javascript/app.js"></script>

@@ -74,7 +74,7 @@ if(isset($_POST['send'])){
                     <div class="container">
                         <p>Bonjour,</p>
                         <p>Nous avons reçu une demande pour réinitialiser votre mot de passe. Cliquez sur le bouton ci-dessous pour continuer :</p>
-                        <p ><a class="button" style="color:white" href="http://localhost/hsac/pages/reset-password.php?token=$token">Réinitialiser le mot de passe</a></p>
+                        <p ><a class="button" style="color:white" href="https://e94a-41-186-163-148.ngrok-free.app/hsac/pages/reset-password.php?token=$token">Réinitialiser le mot de passe</a></p>
                         <p>Si vous n'avez pas fait cette demande, veuillez ignorer cet e-mail.</p>
                     </div>
                 </body>

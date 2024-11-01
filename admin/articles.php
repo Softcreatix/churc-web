@@ -76,7 +76,7 @@
             </div>
 
             <?php
-                $stmt = $db->prepare('SELECT SUBSTRING(description, 1, 250) as short_desc, title, article_id FROM articles');
+                $stmt = $db->prepare('SELECT SUBSTRING(description, 1, 350) as short_desc, title, article_id FROM articles');
                 $stmt->execute();
                 $articles = $stmt->fetchAll();
 
@@ -87,7 +87,7 @@
                     echo '<div class="blog-details">';
                     foreach ($articles as $article) {
                         ?>
-                        <div class="blog-item">
+                        <div style="margin-left: 20px;" class="blog-item">
                             <h3><?= $article['title'] ?></h3>
                             <p><?= nl2br($article['short_desc'] )?>...</p>
                             <div>

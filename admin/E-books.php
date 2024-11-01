@@ -88,7 +88,7 @@
                 echo '<div class="blog-details">';
                 foreach ($ebooks as $ebook) {
                     ?>
-                    <div class="blog-item">
+                    <div style="margin-left: 20px;" class="blog-item">
                         <p><img src="../pages/ebook_images/<?= $ebook['ebook_image'] ?>" alt="" width="100%"></p>
                         <h3><?= $ebook['title'] ?></h3>
                         <p><?= $ebook['short_desc'] ?></p>
